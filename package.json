@@ -1,0 +1,29 @@
+{
+  "name": "openoverleaf",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Open-source local LaTeX studio with an editing agent and an integrated terminal.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Holidayrabbit/OpenOverleaf.git"
+  },
+  "homepage": "https://github.com/Holidayrabbit/OpenOverleaf",
+  "packageManager": "pnpm@10.33.4",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel --stream dev",
+    "build": "pnpm -r build",
+    "start": "pnpm --filter @openoverleaf/server start",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @openoverleaf/server test",
+    "dev:web": "pnpm --filter @openoverleaf/web dev",
+    "dev:server": "pnpm --filter @openoverleaf/server dev"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "node-pty"]
+  }
+}
